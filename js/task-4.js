@@ -1,47 +1,36 @@
-const getTotalBalanceByGender = (users, gender) => {
-  return users
-    .filter(user => user.gender === gender)  // фільтруємо користувачів за статтю
-    .reduce((total, user) => total + user.balance, 0);  // додаємо баланс кожного користувача
-};
+// Отримуємо форму
+const loginForm = document.querySelector('.login-form');
 
-const clients = [
-  {
-    name: "Moore Hensley",
-    gender: "male",
-    balance: 2811
-  },
-  {
-    name: "Sharlene Bush",
-    gender: "female",
-    balance: 3821
-  },
-  {
-    name: "Ross Vazquez",
-    gender: "male",
-    balance: 3793
-  },
-  {
-    name: "Elma Head",
-    gender: "female",
-    balance: 2278
-  },
-  {
-    name: "Carey Barr",
-    gender: "male",
-    balance: 3951
-  },
-  {
-    name: "Blackburn Dotson",
-    gender: "male",
-    balance: 1498
-  },
-  {
-    name: "Sheree Anthony",
-    gender: "female",
-    balance: 2764
+// Додаємо обробку події submit
+loginForm.addEventListener('submit', (event) => {
+  event.preventDefault(); // Забороняємо перезавантаження сторінки
+
+  // Отримуємо значення полів
+  const email = event.target.elements.email.value.trim(); // Видаляємо пробіли
+  const password = event.target.elements.password.value.trim(); // Видаляємо пробіли
+
+  // Перевіряємо, чи всі поля заповнені
+  if (!email || !password) {
+    alert('All form fields must be filled in'); // Повідомлення про помилку
+    return;
   }
-];
 
-console.log(getTotalBalanceByGender(clients, "male"));   
+  // Створюємо об'єкт із введеними даними
+  const formData = {
+    email,
+    password,
+  };
 
-console.log(getTotalBalanceByGender(clients, "female")); 
+  console.log(formData); // Виводимо об'єкт у консоль
+  loginForm.reset(); // Очищаємо поля форми
+});
+
+// Отримуємо кнопку Destroy
+const destroyBtn = document.querySelector('.destroy-btn');
+
+// Додаємо обробку події click для кнопки Destroy
+destroyBtn.addEventListener('click', () => {
+  loginForm.reset(); // Очищуємо всі поля форми
+  alert('All form fields have been cleared!'); // Повідомлення про очищення
+  console.log('Form fields cleared!');
+});
