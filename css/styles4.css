@@ -1,7 +1,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
 margin: 0;
-padding: 28px;
+padding: 0;
 background-color: #fff;
 display: flex;
 justify-content: center;
@@ -9,105 +9,64 @@ align-items: center;
 height: 100%;
 
 }
-.container {
+.login-form {
+    background-color: #ffffff;
+    padding: 24px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 408px;
+    height: 256px;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    width: 360px;
-   
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 15px;
 }
-/* Група інпутів */
-.input-group {
-    margin-bottom: 24px;
+/* Стиль для label */
+.login-form label {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
     gap: 8px;
-}
-label {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.04em;
     color: #2e2f42;
-    margin-bottom: 8px;
 }
-input {
-    width: 100%;
-    padding: 8px 16px;
+/* Стиль для input */
+.login-form input {
+    margin-top: 8px;
+    padding: 10px;
+    font-size: 14px;
     border: 1px solid #808080;
     border-radius: 4px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.04em;
-    color: #2e2f42
+    outline: none;
     transition: border-color 0.3s ease;
-    }
-/* Hover: змінюємо колір рамки на чорний */
-input:hover {
-    border-color: #000;
-    }
-    
-/* Active: змінюємо колір рамки на сірий */
-        input:active {
-            border-color: #ccc;
-            /* Повертаємо сірий колір рамки */
-            outline: none;
-            /* Прибираємо стандартний фокус */
-        }
-/* Кнопка */
-.btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    background-color: #4e75ff;
-    color: white;
+}
+.login-form input:focus {
+    border-color: #007bff;
+}
+
+/* Стиль для кнопки */
+.login-form button {
     padding: 8px 16px;
     border-radius: 8px;
-    width: 86px;
-    height: 40px;
-    border: none;
-    border-radius: 4px;
     font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin: 116px;
-}
-
-/* Ефект наведення на кнопку */
-.btn:hover {
-    background-color: #6c8cff;
-    transform: scale(1.05);
-}
-
-/* Кнопка Destroy */
-.destroy-btn {
+    color: #ffffff;
+    background: #4e75ff;
+    border: none;
+   cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    background-color: #ff4e4e;
-    color: white;
-    padding: 8px 26.5px;
-    border: none;
-    border-radius: 4px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.04em;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    width: 120px;
+    width: 86px;
     height: 40px;
+    transition: background-color 0.3s ease;
 }
 
-/* Ефект наведення на кнопку Destroy */
-.destroy-btn:hover {
-    background-color: #ff7070;
-    transform: scale(1.05);
+.login-form button:hover {
+    background-color: #0056b3;
 }
-

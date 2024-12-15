@@ -1,36 +1,29 @@
-// Отримуємо форму
+// Отримуємо посилання на форму
 const loginForm = document.querySelector('.login-form');
 
-// Додаємо обробку події submit
+// Додаємо обробник події submit
 loginForm.addEventListener('submit', (event) => {
   event.preventDefault(); // Забороняємо перезавантаження сторінки
 
-  // Отримуємо значення полів
-  const email = event.target.elements.email.value.trim(); // Видаляємо пробіли
-  const password = event.target.elements.password.value.trim(); // Видаляємо пробіли
+  // Отримуємо значення полів форми
+  const email = event.target.elements.email.value.trim();
+  const password = event.target.elements.password.value.trim();
 
   // Перевіряємо, чи всі поля заповнені
   if (!email || !password) {
-    alert('All form fields must be filled in'); // Повідомлення про помилку
-    return;
+    alert('All form fields must be filled in');
+    return; // Зупиняємо виконання функції
   }
 
-  // Створюємо об'єкт із введеними даними
+  // Формуємо об'єкт із даними
   const formData = {
     email,
     password,
   };
 
-  console.log(formData); // Виводимо об'єкт у консоль
-  loginForm.reset(); // Очищаємо поля форми
-});
+  // Виводимо об'єкт у консоль
+  console.log(formData);
 
-// Отримуємо кнопку Destroy
-const destroyBtn = document.querySelector('.destroy-btn');
-
-// Додаємо обробку події click для кнопки Destroy
-destroyBtn.addEventListener('click', () => {
-  loginForm.reset(); // Очищуємо всі поля форми
-  alert('All form fields have been cleared!'); // Повідомлення про очищення
-  console.log('Form fields cleared!');
+  // Очищуємо форму
+  loginForm.reset();
 });
