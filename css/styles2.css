@@ -33,8 +33,6 @@
       /* Висота кожного зображення (2 ряди) */
       box-sizing: border-box;
    }
- 
-
  .gallery-image {
     display: block;
     width: 100%;
